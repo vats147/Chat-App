@@ -1,0 +1,11 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Chat Application with ReactJS, NodeJS, Socket Io, MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vatsal Mangukiya",
+  "license": "ISC"
+}
