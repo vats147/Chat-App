@@ -4,8 +4,9 @@ const chatModel=require('../models/chatModel');
 // CreateChat
 const createChat=async(req,res)=>
 {
+       console.log(req.body);
        const {firstId,secondId}=req.body;
-       
+       console.log();
        try{
               const chat=await chatModel.findOne({
                      members:{$all:[firstId,secondId]}

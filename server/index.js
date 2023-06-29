@@ -6,6 +6,9 @@ const chatRoute=require('./Routes/chatRoute');
 const messageRoute=require('./Routes/messageRoute');
 
 const app=express();
+app.use(cors({
+       origin: '*',
+     }));
 require('dotenv').config();
 
 app.use(express.json());
