@@ -2,6 +2,8 @@ const express=require('express');
 const cors =require('cors');
 const mongoose=require('mongoose');
 const userRoute=require('./Routes/userRoute');
+const chatRoute=require('./Routes/chatRoute');
+
 
 const app=express();
 require('dotenv').config();
@@ -10,6 +12,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/users",userRoute);
+app.use("/api/chats",chatRoute);
+
  
 const PORT=process.env.PORT || 3000;
 const uri=process.env.ATLAS_URI;
