@@ -4,12 +4,13 @@ import { Container, Stack } from "react-bootstrap";
 import UserChat from "../components/chat/UserChat";
 import { AuthContext } from "../context/AuthContext";
 import PotenitalChats from "../components/chat/potenitalChats";
+import ChatBox from "../components/chat/ChatBox";
 
 const ChatApp = () => {
     
   const { user } =useContext(AuthContext);
 
-  const { userChats, isUserChatsLoading, userChatsError } =
+  const { userChats, isUserChatsLoading, updateCurrentChat } =
     useContext(ChatContext);
 
   console.log("SuperChats", userChats);
@@ -24,14 +25,14 @@ const ChatApp = () => {
               {isUserChatsLoading && <p>Loading Chats.....</p>}
               {userChats?.map((chat,index)=>{
                      return (
-                     <div key={index}>
+                     <div key={index} onClick={()=>updateCurrentChat(chat)}>
                             <UserChat chat={chat} user={user}/>
                      </div>
                      );
               })}iasd
               </Stack>
           
-          <p>ChatBox</p>
+         <ChatBox/>
         </Stack>
       )}
     </Container>
